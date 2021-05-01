@@ -21,6 +21,16 @@
   @include flex(column, center, center);
 }
 
+.controls-buttons {
+  @include flex(row, space-evenly, center);
+  input {
+    padding: 1rem 2rem;
+  }
+  p {
+    padding: 1rem 2rem;
+  }
+}
+
 .player-buttons {
   width: 50vw;
   @include flex(row, space-evenly, center);

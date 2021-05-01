@@ -12,6 +12,7 @@ function App() {
   /*-------Managing State-----------------*/
   const [videos, setVideos] = useState(videosDB);
   const [currentVideo, setCurrentVideo] = useState(videos[0]);
+  const [videoInfo, setVideoInfo] = useState({currentTimestamp: null, duration: null});
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
@@ -21,7 +22,9 @@ function App() {
           currentVideo={currentVideo} 
           setCurrentVideo={setCurrentVideo} 
           isPlaying={isPlaying}
-          setIsPlaying={setIsPlaying}/>
+          setIsPlaying={setIsPlaying}
+          videoInfo={videoInfo}
+          setVideoInfo={setVideoInfo}/>
     </div>
   );
 }

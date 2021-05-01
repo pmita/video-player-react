@@ -3,25 +3,31 @@ import React, {useRef} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faPlay, faAngleLeft, faAngleRight} from '@fortawesome/free-solid-svg-icons'
 
-function VideoPlayer({currentVideo, setCurrentVideo, isPlaying, setIsPlaying}) {
+function VideoPlayer({currentVideo, setCurrentVideo, isPlaying, setIsPlaying, videoInfo, setVideoInfo}) {
     /*-------References-----------------*/
     const videoRef = useRef(null);
     /*-------Event Handelers------------*/
     const playVideoHandler = () => {
-        if(isPlaying === false){
+        if(!isPlaying){
             videoRef.current.play();
             setIsPlaying(true);
-            console.log('pause the video');
+            console.log('video playing');
         } else {
             videoRef.current.pause();
             setIsPlaying(false);
             console.log('pause the video');
-;        }
+       }
+    }
+    const updateVideoTimeHandler = (e) => {
+        const currentTimestamp = e.target.currentTime;
+        const duration = e.target.duration;
+        setVideoInfo({...videoInfo, currentTimestamp, duration});
     }
     return(
         <div className="videoPlayer-container">
             <div className="video-container">
                 <video 
+                    onTimeUpdate={updateVideoTimeHandler}
                     ref={videoRef}
                     className="video" 
                     muted 
@@ -32,7 +38,12 @@ function VideoPlayer({currentVideo, setCurrentVideo, isPlaying, setIsPlaying}) {
             </div>
 
             <div className="controls-container">
-                <input type="range" className="video-length" />
+                <div className="controls-buttons">
+                    <p>{videoInfo.currentTimestamp}</p>
+                    <input type="range" className="video-length" />
+                    <p>{videoInfo.duration}</p>
+                </div>
+                
                 <div className="player-buttons">
                     <FontAwesomeIcon className="play-previous" size="2x" icon={faAngleLeft} />
                     <FontAwesomeIcon onClick={playVideoHandler} className="play" size="2x" icon={faPlay} />
