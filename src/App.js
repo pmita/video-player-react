@@ -14,7 +14,6 @@ function App() {
 
   return (
     <div className="App">
-        <h1>Video Project</h1>
         <Videos currentVideo={currentVideo} setCurrentVideo={setCurrentVideo}/>
         <Player />
     </div>

@@ -16,4 +16,12 @@ html {
   align-items: $align;
 }
 
+.App {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: grid;
+  place-content: center;
+}
+
 @import "videos";
+@import "player";
