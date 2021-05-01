@@ -3,19 +3,25 @@ import './styles/app.scss'
 //Importing videos
 import videosDB from './utility_db';
 //Importing components
-import Player from '../src/components/Player';
-import Videos from '../src/components/Videos';
+//import Player from '../src/components/Player';
+//import Videos from '../src/components/Videos';
+import VideoPlayer from '../src/components/VideoPlayer';
 //import img
 
 function App() {
-
+  /*-------Managing State-----------------*/
   const [videos, setVideos] = useState(videosDB);
   const [currentVideo, setCurrentVideo] = useState(videos[0]);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   return (
     <div className="App">
-        <Videos currentVideo={currentVideo} setCurrentVideo={setCurrentVideo}/>
-        <Player />
+       
+        <VideoPlayer 
+          currentVideo={currentVideo} 
+          setCurrentVideo={setCurrentVideo} 
+          isPlaying={isPlaying}
+          setIsPlaying={setIsPlaying}/>
     </div>
   );
 }

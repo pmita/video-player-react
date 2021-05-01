@@ -1,0 +1,28 @@
+.videoPlayer-container {
+  height: 100vh;
+  width: 100vw;
+}
+
+.video-container {
+  height: 80vh;
+  width: 100%;
+  @include flex(column, center, center);
+  .video {
+    height: 80%;
+    width: 80%;
+    object-fit: cover;
+    border-radius: 12px;
+  }
+}
+
+.controls-container {
+  height: 20vh;
+  width: 100%;
+  @include flex(column, center, center);
+}
+
+.player-buttons {
+  width: 50vw;
+  @include flex(row, space-evenly, center);
+  padding: 2.5rem;
+}

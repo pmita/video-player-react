@@ -19,9 +19,7 @@ html {
 .App {
   min-height: 100vh;
   min-width: 100vw;
-  display: grid;
-  place-content: center;
+  @include flex(column, center, center);
 }
 
-@import "videos";
-@import "player";
+@import "videoPlayer";
