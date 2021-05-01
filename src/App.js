@@ -5,6 +5,7 @@ import videosDB from './utility_db';
 //Importing components
 import Player from '../src/components/Player';
 import Videos from '../src/components/Videos';
+//import img
 
 function App() {
 
