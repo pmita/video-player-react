@@ -6,6 +6,7 @@ import videosDB from './utility_db';
 //import Player from '../src/components/Player';
 //import Videos from '../src/components/Videos';
 import VideoPlayer from '../src/components/VideoPlayer';
+import VideosLibrary from './components/VideosLibrary';
 //import img
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           setIsPlaying={setIsPlaying}
           videoInfo={videoInfo}
           setVideoInfo={setVideoInfo}/>
+        <VideosLibrary videos={videos}/>
     </div>
   );
 }

@@ -6,7 +6,7 @@
 
 .video-container {
   height: 65vh;
-  width: 50%;
+  width: 40%;
   @include flex(column, center, center);
   .video {
     height: 80%;
